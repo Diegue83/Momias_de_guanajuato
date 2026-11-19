@@ -60,4 +60,20 @@ void main() {
 
     expect(motor.estado, EstadoJuego.perdido);
   });
+
+  test('llegar a la meta cambia el estado a ganado', () {
+    final personaje = Personaje(x: 495, y: 268);
+    final motor = MotorJuego(
+      personaje: personaje,
+      plataformas: const [Rectangulo(x: 0, y: 300, ancho: 1000, alto: 20)],
+      momias: const [],
+      calaveritas: const [],
+      posicionMeta: 500,
+      anchoNivel: 1000,
+    );
+
+    motor.mover(10); // 495 + 10 = 505, ya paso la meta en 500
+
+    expect(motor.estado, EstadoJuego.ganado);
+  });
 }
