@@ -25,10 +25,10 @@ void main() {
   });
 
   test('el personaje aterriza sobre una plataforma al caer sobre ella', () {
-    final personaje = Personaje(x: 10, y: 90)..velocidadY = 5;
+    final personaje = Personaje(x: 10, y: 70)..velocidadY = 5;
     const plataforma = Rectangulo(x: 0, y: 100, ancho: 100, alto: 20);
 
-    MotorFisica.resolverColisionConPiso(personaje, [plataforma], 85);
+    MotorFisica.resolverColisionConPiso(personaje, [plataforma], 65);
 
     expect(personaje.enElSuelo, true);
     expect(personaje.y, 100 - personaje.alto);
