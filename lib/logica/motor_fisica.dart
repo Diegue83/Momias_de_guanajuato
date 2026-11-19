@@ -44,4 +44,8 @@ class MotorFisica {
       personaje.x = anchoNivel - personaje.ancho;
     }
   }
+
+  static bool haLlegadoALaMeta(Personaje personaje, double posicionMeta) {
+    return personaje.x >= posicionMeta;
+  }
 }
